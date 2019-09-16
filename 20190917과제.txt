@@ -1,0 +1,130 @@
+1.번
+1. visual studio을 실행 시킨다.
+2. 새 프로젝트 만들기 누르기.
+3. 템플릿 검색창에 MFC를 검색 한 뒤, MFC 앱 (C++, windows, 데스크톱)을 
+   누른 뒤, 다음을 누른다.
+4. 프로젝트 이름을 calculator97로 지정한뒤, 아래의 솔루션 및 프로젝트를 
+   같은 디렉터리에 배치를 체크한 뒤, 만들기 버튼을 누른다.
+5. 애플리케이션 종류(T)에서 여러문서를 대화상자 기반으로 변경한 뒤,
+   마침 버튼을 누른다.
+6. 프로젝트를 만들었다면, 옆의 솔루션 탐색기>리소스파일>calculator97.rc를
+   누른다.
+7. 리소스 뷰에서 Dialog클릭 뒤, IDD_CALCULATOR97_DIALOG를 클릭한다.
+8. 이제부터는 Dialog를 생성하는 작업을 시작할 것입니다. 도구상자에서
+   Edit box를 3개, Button을 1개 Dialog에 끌어 놓는다.
+9. 이쁘게 꾸미기 위해 button을 클릭한 뒤, shift를 누른채 다른상자들을
+   드래그 한 뒤, 위의 로컬window디버거 옆에 같은 너비로를 눌러서 상자들의
+   크기를 맞춰 준다. 
+10.각 edit box들과 button 을 id 를 IDC_E1, IDC_E2, IDC_E3, IDC_B1으로
+   편의를 위해 바꿔놓는다.
+11.보기의 창들을 계산기로 바꾸기위해 Button1의 속성에서 caption칸에 +를
+   넣어주어 + 버튼으로 바꾼다.
+12.이제까지는 Dialog를 다 만들어 주었으니, 코딩을 하여서 덧셈을 할 수있게 
+   만들어줍니다. + 버튼을 더블클릭하여 코딩을 시작합니다.
+13.더블 클릭을 하여주면, void Ccalculator97Dlg::OnBnClickdB1(){}이 생성
+   됩니다.
+14.  void Ccalculator97Dlg::OnBnClickdB1(){}의 중괄호 안에 이제 코딩을 
+  시작하여 주면 됩니다. 현재 우리는 EDIT BOX1,2에 숫자를 넣어준 뒤, 버튼을 
+  누를 때 EDIT BOX3에 덧셈된 값을 출력 하여 주는 것이기 때문에 코딩은
+     double a = GetDlgItemInt(IDC_E1);
+   double b = GetDlgItemInt(IDC_E2);
+   double c = a + b;
+   SetDlgItemInt(IDC_E3, c);
+   이런식으로 넣어주면 됩니다.
+14-1 코딩해석:
+   GetDlgItemInt : 특정 위치에서 정수값을 얻겠다.
+   SetDlgItemInt : 값을 특정 위치에 넣어준다.
+   변수 a에 IDC_E1의 값, 변수 b에 IDC_E2의값을 GetDlgItemInt()를 사용하여
+   값을 넣어준다.
+   변수 c 에는 a의 값과 b의 값을 더한값을 출력하여 주기위해서, SetDlgItemInt
+   ()을 사용하여, IDC_E3, c의 값을 넣어 준다.
+15. 마지막으로 실행을 하여주면 970+212 = 1182라는 계산기가 만들어진다.
+--------------------------------------------------
+2번.
+1. visual studio을 실행 시킨다.
+2. 새 프로젝트 만들기 누르기.
+3. 템플릿 검색창에 MFC를 검색 한 뒤, MFC 앱 (C++, windows, 데스크톱)을 
+   누른 뒤, 다음을 누른다.
+4. 프로젝트 이름을 calculator97로 지정한뒤, 아래의 솔루션 및 프로젝트를 
+   같은 디렉터리에 배치를 체크한 뒤, 만들기 버튼을 누른다.
+5. 애플리케이션 종류(T)에서 여러문서를 대화상자 기반으로 변경한 뒤,
+   마침 버튼을 누른다.
+6. 프로젝트를 만들었다면, 옆의 솔루션 탐색기>리소스파일>calculator97.rc를
+   누른다.
+7. 리소스 뷰에서 Dialog클릭 뒤, IDD_CALCULATOR97_DIALOG를 클릭한다.
+8. 이제부터는 Dialog를 생성하는 작업을 시작할 것입니다. 도구상자에서
+   Edit box를 3개, Button을 1개 Dialog에 끌어 놓는다.
+9. 이쁘게 꾸미기 위해 button을 클릭한 뒤, shift를 누른채 다른상자들을
+   드래그 한 뒤, 위의 로컬window디버거 옆에 같은 너비로를 눌러서 상자들의
+   크기를 맞춰 준다. 
+10.각 edit box들과 button 을 id 를 IDC_E1, IDC_E2, IDC_E3, IDC_B1으로
+   편의를 위해 바꿔놓는다.
+11.보기의 창들을 계산기로 바꾸기위해 Button1의 속성에서 caption칸에 +를
+   넣어주어 + 버튼으로 바꾼다.
+12.이전의 getdlgitemint()와 setdlgitemint()활용한 방식이 아닌 다른방식으로
+   하기위해서는 각 edit box에 오른쪽 마우스 클릭 후 변수추가에 들어가서
+   범주는 값으로 변경하고, 이름은 대략 생성해주고, 변수형식은 간단한 덧셈
+   이기 때문에 int 형으로 만들어준 뒤 마침을 눌러주면 제어변수를 추가를 할
+   수 있다.
+13.이제까지는 Dialog를 다 만들어 주었으니, 코딩을 하여서 덧셈을 할 수있게 
+   만들어줍니다. + 버튼을 더블클릭하여 코딩을 시작합니다.
+14.더블 클릭을 하여주면, void Ccalculator97Dlg::OnBnClickdB1(){}이 생성
+   됩니다.
+15.  void Ccalculator97Dlg::OnBnClickdB1(){}의 중괄호 안에 이제 코딩을 
+  시작하여 주면 됩니다. 현재 우리는 EDIT BOX1,2에 숫자를 넣어준 뒤, 버튼을 
+  누를 때 EDIT BOX3에 덧셈된 값을 출력 하여 주는 것이기 때문에 코딩은
+     UpdateData(true);
+   m_c = m_a + m_b;
+   UpdateData(false);
+   이런식으로 넣어주면 됩니다.
+15-1 코딩해석:
+    이전의 코딩과 달리, 변수를 추가 해준 프로그램은 간단하게 UpdateData()
+    함수를 활용한 후 m_c = m_a + m_b;를 추가하여 프로그램 코딩을 하여준다.
+16. 마지막으로 실행을 하여주면 97+2 = 99라는 계산기가 만들어진다.
+-------------------------------------------------
+3번.
+1. visual studio을 실행 시킨다.
+2. 새 프로젝트 만들기 누르기.
+3. 템플릿 검색창에 MFC를 검색 한 뒤, MFC 앱 (C++, windows, 데스크톱)을 
+   누른 뒤, 다음을 누른다.
+4. 프로젝트 이름을 Pen로 지정한뒤, 아래의 솔루션 및 프로젝트를 
+   같은 디렉터리에 배치를 체크한 뒤, 만들기 버튼을 누른다.
+5. 애플리케이션 종류(T)에서 여러문서를 대화상자 기반으로 변경한 뒤,
+   마침 버튼을 누른다.
+6. 프로젝트를 만들었다면, 옆의 솔루션 탐색기>리소스파일>Pen.rc를
+   누른다.
+7. 리소스 뷰에서 Dialog클릭 뒤, IDD_Pen_DIALOG를 클릭한다.
+8. 이번에는 마우스를 활용하여 글씨를 써주는 프로그램이기 때문에 속성>
+   메시지에서 WM_MOUSEMOVE의 옆에 DROP 박스에서<ADD>OnMouseMove를 눌러주면
+   void CPenDlg::OnMouseMove(UNIT nFlags, CPoint point){
+   CDialogEx::OnMouseMove(nFlags, point)
+   }
+   가 생성되어 코딩을 하여 주면된다.
+9. 코딩같은경우에는
+
+CPoint pnt;
+void CPenDlg::OnMouseMove(UNIT nFlags, CPoint point)
+{
+   if (nFlags == MK_LBUTTON) {
+      CClientDC dc(this);
+      CPen pen(PS_SOLID, 16, RGB(0, 255, 0));
+      dc.SelectObject(&pen);
+      dc.MoveTo(pnt);
+      dc.LineTo(point);
+   }
+   pnt = point;   
+
+
+   CDialogEx::OnMouseMove(nFlags, point)
+}으로 하여주면된다.
+9-1. 코딩 해석
+    pnt라는 전역변수를 밖에다 선언을 하여준다.
+    if(nFlags == MK_LBUTTON){}이라는 제어문을 만들어준 뒤
+    마우스 왼쪽 버튼을 누를시 
+    16픽셀의 크기에 초록색깔 속성을 넣어주고, moveto, lineto를 가지고
+    움직일 때 라인이 그려지게 속성을 넣어준뒤
+    제어문 밖에 전역변수 pnt를 point 라고 지정하여 주는 코드내용이다.
+10. 위의 코딩을 하고 디버깅을 시작하면 화면에 초록색깔의 16픽셀의 펜이 
+    만들어져 글씨를 사용할 수 있다.
+
+
